@@ -29,7 +29,7 @@
 <li>其它 linux 发行版的用户也可以使用本文的方法，对于提示的错误如果不影响使用可以不用管，否则就需要安装相应的依赖包</li>
 </ul>
 <p>找到 .deb 所在目录将 .deb 解压</p>
-<p><img alt="解压.deb" src="http://oc73cuso6.bkt.clouddn.com/images/1.gif" /></p>
+<p><img alt="解压.deb" src="/images/1.gif" /></p>
 <p>解压后执行以下命令将 netease-cloud-music* 文件夹移动到 /opt 文件夹（也可以是其它）</p>
 <div class="highlight"><pre><span></span>sudo cp -r netease-cloud-music_0.9.0-2_amd64 /opt
 cd /opt/netease-cloud-music_0.9.0-2_amd64
@@ -37,19 +37,19 @@ sudo tar -xvf data.tar.xz
 </pre></div>
 
 
-<p><img alt="移动文件夹" src="http://oc73cuso6.bkt.clouddn.com/images/2.gif" /></p>
+<p><img alt="移动文件夹" src="/images/2.gif" /></p>
 <p>接下来进就可以运行网易云音乐，这种方法不会引起内存泄漏，所以可以用这种方法避免内存泄漏</p>
 <div class="highlight"><pre><span></span>./usr/bin/netease-cloud-music
 </pre></div>
 
 
-<p><img alt="运行网易云音乐" src="http://oc73cuso6.bkt.clouddn.com/images/3.gif" /></p>
+<p><img alt="运行网易云音乐" src="/images/3.gif" /></p>
 <p>如果你觉得不够方便，你可以将以下命令粘贴到 .bashrc ，但是用这种方法会引起内存泄漏，具体原因不清楚</p>
 <div class="highlight"><pre><span></span>alias netease-cloud-music=&#39;cd / &amp;&amp; ./opt/netease-cloud-music_0.9.0-2_amd64/usr/bin/netease-cloud-music&#39;
 </pre></div>
 
 
-<p><img alt="命令运行网易云音乐" src="http://oc73cuso6.bkt.clouddn.com/images/4.gif" /></p>
+<p><img alt="命令运行网易云音乐" src="/images/4.gif" /></p>
 <p>启终端后就可以通过命令 netease-cloud-music 启动网易云音乐了  </p>
             </div>
             <div>
