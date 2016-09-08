@@ -54,6 +54,10 @@ h4 {
     line-height: 1.5;
 }
 
+p {
+    line-height: 1.5;
+}
+
 a {
     text-decoration: none;
 }
@@ -63,10 +67,9 @@ a {
     text-decoration: none;
 }
 
-.footer {
+#footer {
     border-top: 1px solid #eee;
     font-size: 12px;
-    line-height: 0.5;
     padding-bottom: 5px;
     padding-top: 5px;
     height: 80px;
@@ -78,17 +81,13 @@ a {
     background-color: #e6e6fa;
 }
 
-.footer a:hover {
+#footer a:hover {
     text-decoration: underline;
 }
 
-.footer p {
+#footer p {
     padding: 0 10px 0 0;
-}
-
-ul, ol {
-    margin: 0 0 0 25px;
-    padding: 0;
+    line-height: 1.0;
 }
 
 #comment {
