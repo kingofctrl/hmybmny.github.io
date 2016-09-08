@@ -67,7 +67,7 @@ a {
     text-decoration: none;
 }
 
-#footer {
+.footer {
     border-top: 1px solid #eee;
     font-size: 12px;
     padding-bottom: 5px;
@@ -81,11 +81,11 @@ a {
     background-color: #e6e6fa;
 }
 
-#footer a:hover {
+.footer a:hover {
     text-decoration: underline;
 }
 
-#footer p {
+.footer p {
     padding: 0 10px 0 0;
     line-height: 1.0;
 }
