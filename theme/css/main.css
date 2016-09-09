@@ -5,7 +5,7 @@ html, body {
 }
 
 body{
-    font-family: "Lato",Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -104,7 +104,7 @@ a {
     background: #f2f2f2 none repeat scroll 0 0;
     color: #999;
     display: block;
-    font-family: "Lato",Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
     margin-bottom: 0px;
     padding: 10px 0 10px 0;
     text-shadow: 0 0 1px #fff;
@@ -131,7 +131,7 @@ a {
 pre {
     background: #efefef none repeat scroll 0 0;
     border: 1px solid #dfdfdf;
-    font-family: Courier,serif;
+    font-family: "Lato", Courier, serif;
     line-height: 22px;
     margin: 0 0 10px;
     overflow-x: auto;
