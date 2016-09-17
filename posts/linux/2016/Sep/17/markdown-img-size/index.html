@@ -6,8 +6,8 @@
 	<meta name="description" content="Title: Markdown 语法控制图片大小; Date: 2016-09-17; Author: HmyBmny">
 	<meta name="author" content="HmyBmny">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://hmybmny.com/theme/css/main.css">
-	<link rel="stylesheet" href="http://hmybmny.com/theme/css/github.css">
+    <link rel="stylesheet" href="/theme/css/main.css">
+	<link rel="stylesheet" href="/theme/css/github.css">
 </head>
 <body>
     <div id="container">
@@ -18,7 +18,7 @@
         </div>
         <div id="main">
             <div id="article">
-                <a href="http://hmybmny.com/">Back to the Homepage</a>
+                <a href="/">Back to the Homepage</a>
                 <div id="article-body">
                     <p>发第一篇文章时最后两张图太大，已经超过了屏幕正常的宽度，当时搜了一些资料，给出的方法基本都是 <code>&lt;img ...&gt;&lt;/img&gt;</code> 的形式，也有给出 <code>markdown</code> 语法的，测试后都不能用。后来准备使用图床，把图片存到 <code>GitHub</code> 仓库得到图片地址后使用 <code>&lt;img&gt;</code> 标签控制。之前也想尝试使用七牛来做图床，但是没有绑定域名的话只能使用测试域名，测试域名有一些限制，绑定域名又需要备案，只好放弃。正好这两天中秋放假，换了个姿势重新找了资料，终于找到了 <code>markdown</code> 控制图片大小的方法，格式如下：</p>
 <div class="highlight"><pre><span></span><span class="o">!</span><span class="p">[</span><span class="n">img</span><span class="p">](</span><span class="n">img</span><span class="p">.</span><span class="n">png</span><span class="p">){</span><span class="o">:</span> <span class="n">width</span><span class="o">=</span><span class="s">&quot;100px&quot;</span> <span class="n">height</span><span class="o">=</span><span class="s">&quot;100px&quot;</span><span class="p">}</span>
@@ -27,13 +27,13 @@
 
 
 <p><code>![命令运行网易云音乐]({filename}/images/4.gif){: width="100px" height="100px"} 效果如下:</code></p>
-<p><img alt="命令运行网易云音乐" height="100px" src="http://hmybmny.com/images/4.gif" width="100px" /></p>
+<p><img alt="命令运行网易云音乐" height="100px" src="/images/4.gif" width="100px" /></p>
 <p><code>![命令运行网易云音乐]({filename}/images/4.gif){: width="200px" height="200px"} 效果如下:</code></p>
-<p><img alt="命令运行网易云音乐" height="200px" src="http://hmybmny.com/images/4.gif" width="200px" /></p>
+<p><img alt="命令运行网易云音乐" height="200px" src="/images/4.gif" width="200px" /></p>
 <p><code>![命令运行网易云音乐]({filename}/images/4.gif){: width="300px" height="300px"} 效果如下:</code></p>
-<p><img alt="命令运行网易云音乐" height="300px" src="http://hmybmny.com/images/4.gif" width="300px" /></p>
+<p><img alt="命令运行网易云音乐" height="300px" src="/images/4.gif" width="300px" /></p>
 <p><code>![]({filename}/images/4.gif){: width="800px" height="400px" alt="命令运行网易云音乐"} 效果如下:</code></p>
-<p><img alt="命令运行网易云音乐" height="400px" src="http://hmybmny.com/images/4.gif" width="800px" /></p>
+<p><img alt="命令运行网易云音乐" height="400px" src="/images/4.gif" width="800px" /></p>
 <p>参考资料</p>
 <ol>
 <li><a href="https://stackoverflow.com/questions/14675913/how-to-change-image-size-markdown">https://stackoverflow.com/questions/14675913/how-to-change-image-size-markdown</a></li>
@@ -42,17 +42,17 @@
                 <div>
                     Category:
                     <span>
-                        <a href="http://hmybmny.com/category/linux.html" rel="category">Linux</a>
+                        <a href="/category/linux.html" rel="category">Linux</a>
                     </span>
                 </div>
  
                 <div>
                     Tags:
                     <span>
-                        <a href="http://hmybmny.com/tag/markdown.html" rel="tag">markdown</a>
+                        <a href="/tag/markdown.html" rel="tag">markdown</a>
                     </span>
                     <span>
-                        <a href="http://hmybmny.com/tag/image.html" rel="tag">image</a>
+                        <a href="/tag/image.html" rel="tag">image</a>
                     </span>
                 </div>
                 <h4>Comments</h4>
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         </div>
         <div id="footer">
             <p>
-                <a href="http://hmybmny.com/about">About</a>
+                <a href="/about">About</a>
                 |
                 <a href="https://github.com/HmyBmny">GitHub</a>
                 .
