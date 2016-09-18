@@ -5,7 +5,7 @@ html, body {
 }
 
 body{
-    font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "Times New Roman", arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -61,11 +61,12 @@ p {
 }
 
 a {
+    color: #333;
     text-decoration: none;
 }
 
-#main a:hover {
-    color: #999;
+a:hover {
+    color: #00c;
     text-decoration: none;
 }
 
@@ -81,6 +82,10 @@ a {
     text-align: right;
     clear: both;
     background-color: #e6e6fa;
+}
+
+#footer a {
+    color: #00c;
 }
 
 #footer a:hover {
@@ -106,7 +111,6 @@ a {
     background: #f2f2f2 none repeat scroll 0 0;
     color: #999;
     display: block;
-    font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
     margin-bottom: 0px;
     padding: 10px 0 10px 0;
     text-shadow: 0 0 1px #fff;
@@ -121,18 +125,17 @@ a {
 }
 
 #article a {
-    color: blue;
+    color: #00c;
     text-decoration: none;
 }
 
 #article a:hover {
-    color: blue;
+    color: #00c;
     text-decoration: underline;
 }
 
 pre {
     background: #eee none repeat scroll 0 0;
-    font-family: "Consolas","Menlo","Deja Vu Sans Mono","Bitstream Vera Sans Mono",monospace !important;
     padding: 10px 20px;
     font-size: 16px;
     line-height: 1.5;
