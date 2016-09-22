@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Linux 修改镜像源加快下载速度(pip-Docker-RubyGems-NPM) — HmyBmny's Homepage</title>
+	<meta name="description" content="Title: Linux 修改镜像源加快下载速度(pip-Docker-RubyGems-NPM); Date: 2016-09-22; Author: HmyBmny">
+	<meta name="author" content="HmyBmny">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/theme/css/main.css">
+	<link rel="stylesheet" href="/theme/css/solarized-light.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h2>
+                <small>Linux 修改镜像源加快下载速度(pip-Docker-RubyGems-NPM)</small>
+            </h2>
+        </div>
+        <div id="main">
+            <div id="article">
+                <a href="/">Back to the Homepage</a>
+                <div id="article-body">
+                    <p>pip:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/ <span class="o">&amp;&amp;</span> mkdir .pip <span class="o">&amp;&amp;</span> <span class="nb">cd</span> .pip/
+touch pip.conf
+<span class="nb">echo</span> <span class="s2">&quot;[global]&quot;</span>&gt;&gt;pip.conf
+<span class="nb">echo</span> <span class="s2">&quot;index-url = https://pypi.tuna.tsinghua.edu.cn/simple&quot;</span>&gt;&gt;pip.conf
+</pre></div>
+
+
+<p>当前用户和 root 用户的都需要修改，否则使用 sudo 或者 root 用户模式下使用的依旧是官方源。</p>
+<p>RubyGems:</p>
+<div class="highlight"><pre><span></span>gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
+gem sources -l  <span class="c1"># 查看当前源，确保只有 ruby.taobao.org</span>
+</pre></div>
+
+
+<p>RubyGems 使用的是淘宝镜像，官方的国内无法访问，无法使用 Jekyll 写博客的话，所以有必要更换为淘宝镜像，以上命令只是修改当前用户的配置，所以 root 用户的需要切换到 root 状态下修改。</p>
+<p>NPM:</p>
+<p>你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 <code>npm</code>:</p>
+<div class="highlight"><pre><span></span>npm install -g cnpm --registry<span class="o">=</span>https://registry.npm.taobao.org
+</pre></div>
+
+
+<p>或者你直接通过添加 npm 参数 alias 一个新命令:</p>
+<div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">cnpm</span><span class="o">=</span><span class="s2">&quot;npm --registry=https://registry.npm.taobao.org \</span>
+<span class="s2">                    --cache=</span><span class="nv">$HOME</span><span class="s2">/.npm/.cache/cnpm \</span>
+<span class="s2">                    --disturl=https://npm.taobao.org/dist \</span>
+<span class="s2">                    --userconfig=</span><span class="nv">$HOME</span><span class="s2">/.cnpmrc&quot;</span>
+</pre></div>
+
+
+<p>之后使用 <code>cnpm install [name]</code> 安装模块。</p>
+<p>Docker:</p>
+<p>DaoCloud 提供加速工具解决访问 Docker Hub 速度过慢的问题。具体请参考 <a href="https://www.daocloud.io/mirror">https://www.daocloud.io/mirror</a></p>
+<p>参考资料</p>
+<ol>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/">https://mirrors.tuna.tsinghua.edu.cn/pypi/web/</a></li>
+<li><a href="https://ruby.taobao.org/">RubyGems 镜像</a></li>
+<li><a href="https://npm.taobao.org/">淘宝 NPM 镜像</a></li>
+</ol>
+                </div>
+                <div>
+                    Category:
+                    <span>
+                        <a href="/category/linux.html" rel="category">Linux</a>
+                    </span>
+                </div>
+ 
+                <div>
+                    Tags:
+                    <span>
+                        <a href="/tag/pip.html" rel="tag">pip</a>
+                    </span>
+                    <span>
+                        <a href="/tag/rubygems.html" rel="tag">RubyGems</a>
+                    </span>
+                    <span>
+                        <a href="/tag/npm.html" rel="tag">NPM</a>
+                    </span>
+                    <span>
+                        <a href="/tag/docker.html" rel="tag">Docker</a>
+                    </span>
+                </div>
+                <h4>Comments</h4>
+                Want to leave a comment? Visit <a href="https://github.com/HmyBmny/hmybmny.github.io/issues/3" target="_blank"> this post's issue page on GitHub</a> (you'll need a GitHub account.)
+                <div id="comments">
+                </div>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+    function loadComments(data) {
+        for (var i=0; i<data.length; i++) {
+            var cuser = data[i].user.login;
+            var cuserlink = "https://github.com/" + data[i].user.login;
+            var clink = "https://github.com/HmyBmny/hmybmny.github.io/issues/3#issuecomment-" + data[i].url.substring(data[i].url.lastIndexOf("/")+1);
+            var cbody = data[i].body;
+            var cavatarlink = data[i].user.avatar_url;
+            var options = { year: 'numeric', month: 'short', day: 'numeric', hour:'2-digit', minute:'2-digit' };
+            var cdate = new Date(data[i].created_at).toLocaleString("en", options);
+            $("#comments").append("<div id='comment'><a href=\""+ cuserlink +'\"><img src="' + cavatarlink + '" width="32" height="32">' + "</a> &nbsp; <a href=\""+ cuserlink + "\">" + cuser + "</a> &nbsp; commented on &nbsp; <a href=\"" + clink + "\">" + cdate + "</a>" + "<p>" + cbody + " </p></div>");
+        }
+    }
+    $.ajax("https://api.github.com/repos/HmyBmny/hmybmny.github.io/issues/3/comments", {
+        headers: {Accept: "application/vnd.github.full+json"},
+        cache: false,
+        async: false,
+        dataType: "json",
+        success: function(msg){
+        loadComments(msg);
+        }
+    });
+});
+</script>
+            </div>
+        </div>
+        <div id="footer">
+            <p>
+                <a href="/about">About</a>
+                |
+                <a href="https://github.com/HmyBmny">GitHub</a>
+                .
+            </p>
+            <p>
+                Design by HmyBmny
+                .
+            </p>
+            <p>Original articles on this site are CC <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode'>BY-NC-SA</a> licensed unless otherwise stated.</p>
+        </div>
+    </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-82640425-1', 'auto');
+   ga('send', 'pageview');
+
+</script>
+</body>
+</html>
