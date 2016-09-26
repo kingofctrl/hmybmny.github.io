@@ -21,20 +21,20 @@
                 <a href="/">Back to the Homepage</a>
                 <div id="article-body">
                     <p>期待了很久终于等来了网易云音乐发布 linux 版客户端。  </p>
-<p>之前试过 <a href="https://github.com/cosven/FeelUOwn">FeelUOwn</a>  （最近作者进行了更新），但是在 openSUSE 下有一些问题，我觉得体验较好的还是 <a href="https://github.com/darknessomi/musicbox">musicbox</a> ，命令行版本，该有的功能基本都有了，用了很长一段时间，现在官方版本发布，先体验一下！  </p>
-<p>由于官方只提供 .deb 包，对于非 Debian 用户来说不能直接使用 .deb 安装，于是有人将其打包为 rpm 格式，方便其它能够使用 rpm 的用户使用， rpm 链接 <a href="https://github.com/Senorsen/netease-cloud-music-rpm">netease-cloud-music-rpm</a> 。如果你想直接使用官方发布的安装包，那就往下阅读本文吧～  </p>
+<p>之前试过 <a href="https://github.com/cosven/FeelUOwn">FeelUOwn</a>  （最近作者进行了更新），但是在 <code>openSUSE</code> 下有一些问题，我觉得体验较好的还是 <a href="https://github.com/darknessomi/musicbox">musicbox</a> ，命令行版本，该有的功能基本都有了，用了很长一段时间，现在官方版本发布，先体验一下！  </p>
+<p>由于官方只提供 <code>.deb</code> 包，对于非 <code>Debian</code> 用户来说不能直接使用 <code>.deb</code> 安装，于是有人将其打包为 <code>rpm</code> 格式，方便其它能够使用 <code>rpm</code> 的用户使用， <code>rpm</code> 链接 <a href="https://github.com/Senorsen/netease-cloud-music-rpm">netease-cloud-music-rpm</a> 。如果你想直接使用官方发布的安装包，那就往下阅读本文吧～  </p>
 <ul>
-<li><a href="http://blog.deepin.org/2016/05/netease-cloud-music-for-linux-is-released/">音乐无界限，听见好时光——网易云音乐Linux版震撼来袭！</a></li>
-<li>网易官方提供 Deepin 和 Ubuntu 的安装包，其它非 Debian 用户也可以使用官方提供的 .deb 安装包</li>
-<li>本文采用的安装包是网易云音乐官网下载的 Ubuntu 16.04 （64 位）</li>
-<li>运行环境 openSUSE Leap 42.1 (x86_64) 64 位</li>
-<li>其它 linux 发行版的用户也可以使用本文的方法，对于提示的错误如果不影响使用可以不用管，否则就需要安装相应的依赖包</li>
+<li><a href="http://blog.deepin.org/2016/05/netease-cloud-music-for-linux-is-released/">音乐无界限，听见好时光——网易云音乐 <code>Linux</code> 版震撼来袭！</a></li>
+<li>网易官方提供 <code>Deepin</code> 和 <code>Ubuntu</code> 的安装包，其它非 <code>Debian</code> 用户也可以使用官方提供的 <code>.deb</code> 安装包</li>
+<li>本文采用的安装包是网易云音乐官网下载的 <code>Ubuntu 16.04 （64 位）</code></li>
+<li>运行环境 <code>openSUSE Leap 42.1 (x86_64) 64 位</code></li>
+<li>其它 <code>linux</code> 发行版的用户也可以使用本文的方法，对于提示的错误如果不影响使用可以不用管，否则就需要安装相应的依赖包</li>
 </ul>
-<p>找到 .deb 所在目录将 .deb 解压</p>
+<p>找到 <code>.deb</code> 所在目录将 <code>.deb</code> 解压</p>
 <p><img alt="解压.deb" height="400px" src="/images/1.gif" width="800px" /></p>
-<p>解压后执行以下命令将 netease-cloud-music* 文件夹移动到 /opt 文件夹（也可以是其它）</p>
+<p>解压后执行以下命令将 <code>netease-cloud-music*</code> 文件夹移动到 <code>/opt</code> 文件夹（也可以是其它）</p>
 <div class="highlight"><pre><span></span>sudo cp -r netease-cloud-music_0.9.0-2_amd64 /opt
-cd /opt/netease-cloud-music_0.9.0-2_amd64
+<span class="nb">cd</span> /opt/netease-cloud-music_0.9.0-2_amd64
 sudo tar -xvf data.tar.xz
 </pre></div>
 
@@ -46,13 +46,13 @@ sudo tar -xvf data.tar.xz
 
 
 <p><img alt="运行网易云音乐" height="400px" src="/images/3.gif" width="800px" /></p>
-<p>如果你觉得不够方便，你可以将以下命令粘贴到 .bashrc ，但是用这种方法会引起内存泄漏，具体原因不清楚</p>
-<div class="highlight"><pre><span></span>alias netease-cloud-music=&#39;cd / &amp;&amp; ./opt/netease-cloud-music_0.9.0-2_amd64/usr/bin/netease-cloud-music&#39;
+<p>如果你觉得不够方便，你可以将以下命令粘贴到 <code>.bashrc</code> ，但是用这种方法会引起内存泄漏，具体原因不清楚</p>
+<div class="highlight"><pre><span></span><span class="nb">alias</span> netease-cloud-music<span class="o">=</span><span class="s1">&#39;cd / &amp;&amp; ./opt/netease-cloud-music_0.9.0-2_amd64/usr/bin/netease-cloud-music&#39;</span>
 </pre></div>
 
 
 <p><img alt="命令运行网易云音乐" height="400px" src="/images/4.gif" width="800px" /></p>
-<p>启终端后就可以通过命令 netease-cloud-music 启动网易云音乐了  </p>
+<p>启终端后就可以通过命令 <code>netease-cloud-music</code> 启动网易云音乐了  </p>
                 </div>
                 <div>
                     Category:
