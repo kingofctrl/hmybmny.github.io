@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[HmyBmny]]></title>
-  <link href="http://hmybmny.com/atom.xml" rel="self"/>
-  <link href="http://hmybmny.com/"/>
-  <updated>2016-10-05T23:13:27+08:00</updated>
-  <id>http://hmybmny.com/</id>
+  <link href="https://hmybmny.com/atom.xml" rel="self"/>
+  <link href="https://hmybmny.com/"/>
+  <updated>2016-10-06T08:20:51+08:00</updated>
+  <id>https://hmybmny.com/</id>
   <author>
     <name><![CDATA[HmyBmny]]></name>
     <email><![CDATA[hmybmny@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Linux 修改镜像源加快下载速度(pip-RubyGems-NPM-Docker)]]></title>
-    <link href="http://hmybmny.com/2016/10/05/change-sources/"/>
+    <link href="https://hmybmny.com/2016/10/05/change-sources/"/>
     <updated>2016-10-05T00:00:00+08:00</updated>
-    <id>http://hmybmny.com/2016/10/05/change-sources</id>
+    <id>https://hmybmny.com/2016/10/05/change-sources</id>
     <content type="html"><![CDATA[<p>请记住所有配置当前用户和 root 用户的都需要修改，否则使用 sudo 或者 root 用户模式下使用的依旧是官方源。</p>
 
 <!--more-->
@@ -91,9 +91,9 @@ gem sources -l  # 查看当前源，确保只有 ruby.taobao.org
   
   <entry>
     <title type="html"><![CDATA[Markdown 语法控制图片大小]]></title>
-    <link href="http://hmybmny.com/2016/09/17/markdown-img-size/"/>
+    <link href="https://hmybmny.com/2016/09/17/markdown-img-size/"/>
     <updated>2016-09-17T00:00:00+08:00</updated>
-    <id>http://hmybmny.com/2016/09/17/markdown-img-size</id>
+    <id>https://hmybmny.com/2016/09/17/markdown-img-size</id>
     <content type="html"><![CDATA[<p>发第一篇文章时最后两张图太大，已经超过了屏幕正常的宽度，当时搜了一些资料，给出的方法基本都是 <code>`&lt;img ...&gt;&lt;/img&gt;</code> 的形式，也有给出 markdown 语法的，测试后都不能用。后来准备使用图床，把图片存到 GitHub 仓库得到图片地址后使用 <code>&lt;img&gt;</code> 标签控制。之前也想尝试使用七牛来做图床，但是没有绑定域名的话只能使用测试域名，测试域名有一些限制，绑定域名又需要备案，只好放弃。正好这两天中秋放假，换了个姿势重新找了资料，终于找到了 markdown 控制图片大小的方法，格式如下：</p>
 
 <!--more-->
@@ -103,21 +103,21 @@ gem sources -l  # 查看当前源，确保只有 ruby.taobao.org
 ![img](img.png){: width="100px" height="100px" 其它需要的属性}
 </code></pre>
 
-<p><img src="http://hmybmny.com/images/4.gif" alt="命令运行网易云音乐" /></p>
+<p><img src="https://hmybmny.com/images/4.gif" alt="命令运行网易云音乐" /></p>
 
 <p>对于上图来说有以下几种控制方式：</p>
 
 <pre><code>![命令运行网易云音乐](/images/4.gif){: width="100px" height="100px"}
-# &lt;img alt="命令运行网易云音乐" height="100px" src="http://hmybmny.com/images/4.gif" width="100px" /&gt;
+# &lt;img alt="命令运行网易云音乐" height="100px" src="https://hmybmny.com/images/4.gif" width="100px" /&gt;
 
 ![命令运行网易云音乐](/images/4.gif){: width="200px" height="200px"}
-# &lt;img alt="命令运行网易云音乐" height="200px" src="http://hmybmny.com/images/4.gif" width="200px" /&gt;
+# &lt;img alt="命令运行网易云音乐" height="200px" src="https://hmybmny.com/images/4.gif" width="200px" /&gt;
 
 ![命令运行网易云音乐](/images/4.gif){: width="300px" height="300px"}
-# &lt;img alt="命令运行网易云音乐" height="300px" src="http://hmybmny.com/images/4.gif" width="300px" /&gt;
+# &lt;img alt="命令运行网易云音乐" height="300px" src="https://hmybmny.com/images/4.gif" width="300px" /&gt;
 
 ![](/images/4.gif){: width="800px" height="400px" alt="命令运行网易云音乐"}
-# &lt;img alt="命令运行网易云音乐" height="400px" src="http://hmybmny.com/images/4.gif" width="800px" /&gt; 
+# &lt;img alt="命令运行网易云音乐" height="400px" src="https://hmybmny.com/images/4.gif" width="800px" /&gt; 
 </code></pre>
 
 <p>上面的语法使用 Pelican 时能够正确识别，但是在 Octopress 不能识别 {} 中的属性值。</p>
@@ -133,9 +133,9 @@ gem sources -l  # 查看当前源，确保只有 ruby.taobao.org
   
   <entry>
     <title type="html"><![CDATA[非 Debian 用户使用官方网易云音乐]]></title>
-    <link href="http://hmybmny.com/2016/06/01/netease-cloud-music/"/>
+    <link href="https://hmybmny.com/2016/06/01/netease-cloud-music/"/>
     <updated>2016-06-01T00:00:00+08:00</updated>
-    <id>http://hmybmny.com/2016/06/01/netease-cloud-music</id>
+    <id>https://hmybmny.com/2016/06/01/netease-cloud-music</id>
     <content type="html"><![CDATA[<p>期待了很久终于等来了网易云音乐发布 linux 版客户端。之前试过 <a href="https://github.com/cosven/FeelUOwn">FeelUOwn</a>（最近作者进行了更新），但是在 openSUSE 下有一些问题，我觉得体验较好的还是 <a href="https://github.com/darknessomi/musicbox">musicbox</a> ，命令行版本，该有的功能基本都有了，用了很长一段时间，现在官方版本发布，先体验一下！由于官方只提供 .deb 包，对于非 Debian 用户来说不能直接使用 .deb 安装，于是有人将其打包为 rpm 格式，方便其它能够使用 rpm 的用户使用， rpm 链接 <a href="https://github.com/Senorsen/netease-cloud-music-rpm">netease-cloud-music-rpm</a> 。如果你想直接使用官方发布的安装包，那就往下阅读本文吧～</p>
 
 <!--more-->
@@ -152,7 +152,7 @@ gem sources -l  # 查看当前源，确保只有 ruby.taobao.org
 
 <p>找到 .deb 所在目录将 .deb 解压</p>
 
-<p><img src="http://hmybmny.com/images/1.gif" alt="解压.deb" /></p>
+<p><img src="https://hmybmny.com/images/1.gif" alt="解压.deb" /></p>
 
 <p>解压后执行以下命令将 netease-cloud-music* 文件夹移动到 /opt 文件夹（也可以是其它）</p>
 
@@ -161,14 +161,14 @@ cd /opt/netease-cloud-music_0.9.0-2_amd64
 sudo tar -xvf data.tar.xz
 </code></pre>
 
-<p><img src="http://hmybmny.com/images/2.gif" alt="移动文件夹" /></p>
+<p><img src="https://hmybmny.com/images/2.gif" alt="移动文件夹" /></p>
 
 <p>接下来进就可以运行网易云音乐，这种方法不会引起内存泄漏，所以可以用这种方法避免内存泄漏</p>
 
 <pre><code>./usr/bin/netease-cloud-music
 </code></pre>
 
-<p><img src="http://hmybmny.com/images/3.gif" alt="运行网易云音乐" /></p>
+<p><img src="https://hmybmny.com/images/3.gif" alt="运行网易云音乐" /></p>
 
 <p>如果你觉得不够方便，你可以将以下命令粘贴到 .bashrc ，但是用这种方法会引起内存泄漏，具体原因不清楚</p>
 
@@ -176,7 +176,7 @@ sudo tar -xvf data.tar.xz
     ./opt/netease-cloud-music_0.9.0-2_amd64/usr/bin/netease-cloud-music'
 </code></pre>
 
-<p><img src="http://hmybmny.com/images/4.gif" alt="命令运行网易云音乐" /></p>
+<p><img src="https://hmybmny.com/images/4.gif" alt="命令运行网易云音乐" /></p>
 
 <p>启动终端后就可以通过命令 netease-cloud-music 启动网易云音乐了</p>
 ]]></content>
