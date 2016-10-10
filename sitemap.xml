@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://hmybmny.com/2016/10/10/install-caffe-on-ubuntu-16-dot-04-with-gpu/</loc>
+<lastmod>2016-10-10T18:39:54+08:00</lastmod>
+</url>
+<url>
 <loc>https://hmybmny.com/2016/10/05/change-sources/</loc>
 <lastmod>2016-10-05T00:00:00+08:00</lastmod>
 </url>
@@ -13,10 +17,10 @@
 <lastmod>2016-06-01T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>https://hmybmny.com/</loc>
+<loc>https://hmybmny.com/archives/</loc>
 </url>
 <url>
-<loc>https://hmybmny.com/archives/</loc>
+<loc>https://hmybmny.com/</loc>
 </url>
 <url>
 <loc>https://hmybmny.com/about/</loc>
