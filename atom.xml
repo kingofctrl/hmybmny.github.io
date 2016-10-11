@@ -4,7 +4,7 @@
   <title><![CDATA[HmyBmny]]></title>
   <link href="https://hmybmny.com/atom.xml" rel="self"/>
   <link href="https://hmybmny.com/"/>
-  <updated>2016-10-10T20:21:49+08:00</updated>
+  <updated>2016-10-11T09:55:58+08:00</updated>
   <id>https://hmybmny.com/</id>
   <author>
     <name><![CDATA[HmyBmny]]></name>
@@ -18,7 +18,7 @@
     <link href="https://hmybmny.com/2016/10/10/install-caffe-on-ubuntu-16-dot-04-with-gpu/"/>
     <updated>2016-10-10T18:39:54+08:00</updated>
     <id>https://hmybmny.com/2016/10/10/install-caffe-on-ubuntu-16-dot-04-with-gpu</id>
-    <content type="html"><![CDATA[<p>这段时间在学习 Caffe 的使用, Caffe 的安装过程并不复杂，但是对于新手来说可能会出现各种各样的问题，有时候折腾几个小时甚至一天都没有成功，我第一次配置 Caffe 时就折腾得有点神经衰弱，所以写下这篇教程，方便查阅。</p>
+    <content type="html"><![CDATA[<p>这段时间在学习 Caffe 的使用, Caffe 的安装过程并不复杂，但是对于新手来说可能会出现各种各样的问题，有时候折腾几个小时甚至一天都没有成功，我第一次配置 Caffe 时就折腾得有点神经衰弱，所以写下过程，方便查阅。</p>
 
 <!-- more -->
 
@@ -95,16 +95,16 @@
 
 <p>取消注释</p>
 
-<blockquote><p>CPU_ONLY := 1</p></blockquote>
+<blockquote><p>CPU_ONLY := 1</p>
+
+<p>WITH_PYTHON_LAYER := 1</p></blockquote>
 
 <p>如果使用 OpenBlas 代替默认的 ATLAS的话，则修改
 BLAS := open</p>
 
 <p>修改</p>
 
-<blockquote><p>WITH_PYTHON_LAYER := 1</p>
-
-<p>INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial</p>
+<blockquote><p>INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial</p>
 
 <p>LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/hdf5/serial</p></blockquote>
 
@@ -163,13 +163,54 @@ BLAS := open</p>
 <h3>Install with GPU (NVIDIA)</h3>
 
 <ul>
-<li>下载 cuda8 和 Patch1 <a href="https://developer.nvidia.com/cuda-release-candidate-download">https://developer.nvidia.com/cuda-release-candidate-download</a>
+<li><p>下载 cuda8 和 Patch1 <a href="https://developer.nvidia.com/cuda-release-candidate-download">https://developer.nvidia.com/cuda-release-candidate-download</a></p>
 
-<h6>下载完后双击 cuda-misc-headers-8-0_8.0.27.1-1_amd64.deb 安装 Patch1</h6></li>
-<li>下载 cuDNN v5.1 Library for Linux <a href="https://developer.nvidia.com/rdp/cudnn-download">https://developer.nvidia.com/rdp/cudnn-download</a>
+<h5>下载完后双击 cuda-misc-headers-8-0_8.0.27.1-1_amd64.deb 安装 Patch1</h5></li>
+<li><p>下载 cuDNN v5.1 Library for Linux <a href="https://developer.nvidia.com/rdp/cudnn-download">https://developer.nvidia.com/rdp/cudnn-download</a></p>
 
-<h6>对于想使用 cuDNN 加速的同学，首先得确保你的 GPU 计算能力 (capability) 大于 3.0，至于 GPU 计算能力怎么看我后面会提到。</h6></li>
-<li>和 Install with CPU 第一步一样。</li>
+<h5>对于想使用 cuDNN 加速的同学，首先得确保你的 GPU 计算能力 (capability) 大于 3.0，至于 GPU 计算能力怎么看我后面会提到。</h5></li>
+<li><p>安装依赖库，和 Install with CPU 第一步一样。</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt update
+</span><span class='line'>
+</span><span class='line'>sudo apt upgrade
+</span><span class='line'>
+</span><span class='line'>sudo apt install -y build-essential cmake git pkg-config
+</span><span class='line'>
+</span><span class='line'>sudo apt install -y libprotobuf-dev libleveldb-dev libsnappy-dev <span class="se">\</span>
+</span><span class='line'>                    libopencv-dev libhdf5-serial-dev protobuf-compiler
+</span><span class='line'>
+</span><span class='line'>sudo apt install -y --no-install-recommends libboost-all-dev
+</span><span class='line'>
+</span><span class='line'><span class="c"># 如果使用 OpenBlas 代替默认的 ATLAS的话，需要将 libatlas-base-dev 改为 libopenblas-dev</span>
+</span><span class='line'>sudo apt install -y libatlas-base-dev
+</span><span class='line'>
+</span><span class='line'>sudo apt install -y libgflags-dev libgoogle-glog-dev liblmdb-dev
+</span><span class='line'>
+</span><span class='line'>sudo apt install -y python-pip python-dev python-numpy python-scipy
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
 <li>在 Software &amp; Updates 中将 Additional Drivers 下的 NVIDIA Corporation 改为 Using NVIDIA binary driver&hellip;(proprietary, tested)</li>
 <li>安装 CUDA</li>
 </ul>
@@ -203,7 +244,7 @@ BLAS := open</p>
 <p><img src="https://hmybmny.com/images/gpu_capability.png" alt="GPU 计算能力" /></p>
 
 <ul>
-<li>如果GPU 计算能力 (capability) 大于 3.0，那么就可以使用 cuDNN 加速，安装 cuDNN</li>
+<li>如果GPU 计算能力 (capability) 大于 3.0，那么就可以使用 cuDNN 加速，否则跳过这一步，安装 cuDNN</li>
 </ul>
 
 
@@ -222,6 +263,21 @@ BLAS := open</p>
 
 <ul>
 <li>安装 make pycaffe 所需依赖</li>
+</ul>
+
+
+<p>这一步之前最好先修改 pip 源，由于下载的文件比较大，默认源速度很慢，修改源可以参考 <a href="https://hmybmny.com/2016/10/05/change-sources/">Linux 修改镜像源加快下载速度(pip-RubyGems-NPM-Docker)</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">cd </span>python
+</span><span class='line'>
+</span><span class='line'>sudo -H pip2 install -r requirements.txt
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
 <li>修改 Makefile.config</li>
 </ul>
 
