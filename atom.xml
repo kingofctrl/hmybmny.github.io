@@ -4,7 +4,7 @@
   <title><![CDATA[HmyBmny]]></title>
   <link href="https://hmybmny.com/atom.xml" rel="self"/>
   <link href="https://hmybmny.com/"/>
-  <updated>2016-10-11T09:55:58+08:00</updated>
+  <updated>2016-10-13T11:28:33+08:00</updated>
   <id>https://hmybmny.com/</id>
   <author>
     <name><![CDATA[HmyBmny]]></name>
@@ -99,8 +99,16 @@
 
 <p>WITH_PYTHON_LAYER := 1</p></blockquote>
 
-<p>如果使用 OpenBlas 代替默认的 ATLAS的话，则修改
-BLAS := open</p>
+<p>如果使用 OpenBlas 代替默认的 ATLAS的话，则修改</p>
+
+<blockquote><p>BLAS := open</p></blockquote>
+
+<p>并运行以下命令</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">echo</span> <span class="s1">&#39;export OPENBLAS_NUM_THREADS=4&#39;</span> &gt;&gt; /.bashrc
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>修改</p>
 
@@ -163,6 +171,7 @@ BLAS := open</p>
 <h3>Install with GPU (NVIDIA)</h3>
 
 <ul>
+<li><p>进入 BIOS，将 Secure Boot 改为 Disabled</p></li>
 <li><p>下载 cuda8 和 Patch1 <a href="https://developer.nvidia.com/cuda-release-candidate-download">https://developer.nvidia.com/cuda-release-candidate-download</a></p>
 
 <h5>下载完后双击 cuda-misc-headers-8-0_8.0.27.1-1_amd64.deb 安装 Patch1</h5></li>
@@ -244,7 +253,7 @@ BLAS := open</p>
 <p><img src="https://hmybmny.com/images/gpu_capability.png" alt="GPU 计算能力" /></p>
 
 <ul>
-<li>如果GPU 计算能力 (capability) 大于 3.0，那么就可以使用 cuDNN 加速，否则跳过这一步，安装 cuDNN</li>
+<li>如果 GPU 计算能力 (capability) 大于 3.0，那么就可以使用 cuDNN 加速，否则跳过这一步，安装 cuDNN</li>
 </ul>
 
 
@@ -330,9 +339,13 @@ BLAS := open</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Install with GPU (AMD)</h3>
+<h3>GPU (AMD)</h3>
 
-<p>请参考 <a href="https://github.com/BVLC/caffe/tree/opencl">https://github.com/BVLC/caffe/tree/opencl</a></p>
+<ul>
+<li><a href="https://github.com/BVLC/caffe/tree/opencl">https://github.com/BVLC/caffe/tree/opencl</a></li>
+<li><a href="https://github.com/amd/OpenCL-caffe">https://github.com/amd/OpenCL-caffe</a></li>
+</ul>
+
 
 <p>参考资料</p>
 
