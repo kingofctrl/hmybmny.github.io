@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linux | HmyBmny]]></title>
+  <title><![CDATA[Category: Linux | hmybmny]]></title>
   <link href="https://hmybmny.com/categories/linux/atom.xml" rel="self"/>
   <link href="https://hmybmny.com/"/>
-  <updated>2016-10-13T11:28:33+08:00</updated>
+  <updated>2016-10-15T11:20:36+08:00</updated>
   <id>https://hmybmny.com/</id>
   <author>
-    <name><![CDATA[HmyBmny]]></name>
+    <name><![CDATA[hmybmny]]></name>
     <email><![CDATA[hmybmny@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Linux 修改镜像源加快下载速度(pip-RubyGems-NPM-Docker)]]></title>
-    <link href="https://hmybmny.com/2016/10/05/change-sources/"/>
-    <updated>2016-10-05T00:00:00+08:00</updated>
-    <id>https://hmybmny.com/2016/10/05/change-sources</id>
+    <link href="https://hmybmny.com/2016/09/22/change-sources/"/>
+    <updated>2016-09-22T00:00:00+08:00</updated>
+    <id>https://hmybmny.com/2016/09/22/change-sources</id>
     <content type="html"><![CDATA[<p>请记住所有配置当前用户和 root 用户的都需要修改，否则使用 sudo 或者 root 用户模式下使用的依旧是官方源。</p>
 
 <!--more-->
@@ -25,56 +25,34 @@
 
 <p><strong>pip:</strong></p>
 
-<pre><code>cd ~/ &amp;&amp; mkdir .pip &amp;&amp; cd .pip/
-touch pip.conf
+<pre><code class="sh">mkdir ~/.pip &amp;&amp; cd .pip/
 echo "[global]"&gt;&gt;pip.conf
 echo "index-url = https://pypi.tuna.tsinghua.edu.cn/simple"&gt;&gt;pip.conf
 </code></pre>
 
 <p><strong>RubyGems:</strong></p>
 
-<pre><code># 中科大源
+<pre><code class="sh"># 清华源
 gem sources --remove https://rubygems.org/  #移除默认源
-gem sources -a https://mirrors.ustc.edu.cn/rubygems/  #添加中科大源
-gem sources -l  # 查看当前源，确保只有 mirrors.ustc.edu.cn/rubygems
-
-# 淘宝源
-gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
-gem sources -l  # 查看当前源，确保只有 ruby.taobao.org
+gem sources -a https://mirrors.tuna.tsinghua.edu.cn/rubygems/  #添加中清华源
+gem sources -l  # 查看当前源，确保只有 https://mirrors.tuna.tsinghua.edu.cn/rubygems/
 </code></pre>
 
 <p><strong>NPM:</strong></p>
 
 <p>在 ~/.npmrc 中添加：</p>
 
-<pre><code>registry=http://npmreg.mirrors.ustc.edu.cn/
+<pre><code class="sh">registry=http://npmreg.mirrors.ustc.edu.cn/
 </code></pre>
-
-<p>你也可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
-
-<pre><code>npm install -g cnpm --registry=https://registry.npm.taobao.org
-</code></pre>
-
-<p>或者你直接通过添加 npm 参数 alias 一个新命令:</p>
-
-<pre><code>alias cnpm="npm --registry=https://registry.npm.taobao.org \
-                    --cache=$HOME/.npm/.cache/cnpm \
-                    --disturl=https://npm.taobao.org/dist \
-                    --userconfig=$HOME/.cnpmrc"
-</code></pre>
-
-<p>之后使用 cnpm install [name] 安装模块。</p>
 
 <p><strong>Docker:</strong></p>
 
 <p>在 /etc/docker/daemon.json 文件中添加：</p>
 
-<pre><code>{
+<pre><code class="json">{
     "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
 }
 </code></pre>
-
-<p>同时 DaoCloud 提供加速工具解决访问 Docker Hub 速度过慢的问题。具体请参考 <a href="https://www.daocloud.io/mirror">https://www.daocloud.io/mirror</a></p>
 
 <p><strong>教育网的用户推荐添加清华源或者中科大源，这样速度会快很多，能达到几兆每秒。</strong></p>
 
@@ -82,8 +60,7 @@ gem sources -l  # 查看当前源，确保只有 ruby.taobao.org
 
 <ol>
 <li><a href="https://lug.ustc.edu.cn/wiki/mirrors/help">开源镜像使用帮助列表 [LUG@USTC]</a></li>
-<li><a href="https://ruby.taobao.org/">RubyGems 镜像</a></li>
-<li><a href="https://npm.taobao.org/">淘宝 NPM 镜像</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></li>
 </ol>
 
 ]]></content>
@@ -94,7 +71,7 @@ gem sources -l  # 查看当前源，确保只有 ruby.taobao.org
     <link href="https://hmybmny.com/2016/09/17/markdown-img-size/"/>
     <updated>2016-09-17T00:00:00+08:00</updated>
     <id>https://hmybmny.com/2016/09/17/markdown-img-size</id>
-    <content type="html"><![CDATA[<p>发第一篇文章时最后两张图太大，已经超过了屏幕正常的宽度，当时搜了一些资料，给出的方法基本都是 <code>`&lt;img ...&gt;&lt;/img&gt;</code> 的形式，也有给出 markdown 语法的，测试后都不能用。后来准备使用图床，把图片存到 GitHub 仓库得到图片地址后使用 <code>&lt;img&gt;</code> 标签控制。之前也想尝试使用七牛来做图床，但是没有绑定域名的话只能使用测试域名，测试域名有一些限制，绑定域名又需要备案，只好放弃。正好这两天中秋放假，换了个姿势重新找了资料，终于找到了 markdown 控制图片大小的方法，格式如下：</p>
+    <content type="html"><![CDATA[<p>发第一篇文章时最后两张图太大，已经超过了屏幕正常的宽度，当时搜了一些资料，给出的方法基本都是 <code>&lt;img ...&gt;&lt;/img&gt;</code> 的形式，也有给出 markdown 语法的，测试后都不能用。后来准备使用图床，把图片存到 GitHub 仓库得到图片地址后使用 <code>&lt;img&gt;</code> 标签控制。之前也想尝试使用七牛来做图床，但是没有绑定域名的话只能使用测试域名，测试域名有一些限制，绑定域名又需要备案，只好放弃。正好这两天中秋放假，换了个姿势重新找了资料，终于找到了 markdown 控制图片大小的方法，格式如下：</p>
 
 <!--more-->
 
@@ -108,19 +85,19 @@ gem sources -l  # 查看当前源，确保只有 ruby.taobao.org
 <p>对于上图来说有以下几种控制方式：</p>
 
 <pre><code>![命令运行网易云音乐](/images/4.gif){: width="100px" height="100px"}
-# &lt;img alt="命令运行网易云音乐" height="100px" src="https://hmybmny.com/images/4.gif" width="100px" /&gt;
+# 等价于 &lt;img alt="命令运行网易云音乐" height="100px" src="https://hmybmny.com/images/4.gif" width="100px" /&gt;
 
 ![命令运行网易云音乐](/images/4.gif){: width="200px" height="200px"}
-# &lt;img alt="命令运行网易云音乐" height="200px" src="https://hmybmny.com/images/4.gif" width="200px" /&gt;
+# 等价于 &lt;img alt="命令运行网易云音乐" height="200px" src="https://hmybmny.com/images/4.gif" width="200px" /&gt;
 
 ![命令运行网易云音乐](/images/4.gif){: width="300px" height="300px"}
-# &lt;img alt="命令运行网易云音乐" height="300px" src="https://hmybmny.com/images/4.gif" width="300px" /&gt;
+# 等价于 &lt;img alt="命令运行网易云音乐" height="300px" src="https://hmybmny.com/images/4.gif" width="300px" /&gt;
 
 ![](/images/4.gif){: width="800px" height="400px" alt="命令运行网易云音乐"}
-# &lt;img alt="命令运行网易云音乐" height="400px" src="https://hmybmny.com/images/4.gif" width="800px" /&gt; 
+# 等价于 &lt;img alt="命令运行网易云音乐" height="400px" src="https://hmybmny.com/images/4.gif" width="800px" /&gt; 
 </code></pre>
 
-<p>上面的语法使用 Pelican 时能够正确识别，但是在 Octopress 不能识别 {} 中的属性值。</p>
+<p>上面的语法使用 Pelican 时能够正确识别，但是在 Octopress 默认主题下不能识别 {} 中的属性值。</p>
 
 <p>参考资料</p>
 
@@ -136,14 +113,12 @@ gem sources -l  # 查看当前源，确保只有 ruby.taobao.org
     <link href="https://hmybmny.com/2016/06/01/netease-cloud-music/"/>
     <updated>2016-06-01T00:00:00+08:00</updated>
     <id>https://hmybmny.com/2016/06/01/netease-cloud-music</id>
-    <content type="html"><![CDATA[<p>期待了很久终于等来了网易云音乐发布 linux 版客户端。之前试过 <a href="https://github.com/cosven/FeelUOwn">FeelUOwn</a>（最近作者进行了更新），但是在 openSUSE 下有一些问题，我觉得体验较好的还是 <a href="https://github.com/darknessomi/musicbox">musicbox</a> ，命令行版本，该有的功能基本都有了，用了很长一段时间，现在官方版本发布，先体验一下！由于官方只提供 .deb 包，对于非 Debian 用户来说不能直接使用 .deb 安装，于是有人将其打包为 rpm 格式，方便其它能够使用 rpm 的用户使用， rpm 链接 <a href="https://github.com/Senorsen/netease-cloud-music-rpm">netease-cloud-music-rpm</a> 。如果你想直接使用官方发布的安装包，那就往下阅读本文吧～</p>
+    <content type="html"><![CDATA[<p>终于等来了网易云音乐发布 linux 版客户端。之前试过 <a href="https://github.com/cosven/FeelUOwn">FeelUOwn</a>（最近作者进行了更新），但是在 openSUSE 下有一些问题，我觉得体验较好的还是 <a href="https://github.com/darknessomi/musicbox">musicbox</a> ，命令行版本，该有的功能基本都有了，用了很长一段时间，现在官方版本发布，先体验一下！由于官方只提供 .deb 包，对于非 Debian 用户来说不能直接使用 .deb 安装，于是有人将其打包为 rpm 格式，方便其它能够使用 rpm 的用户使用， rpm 链接 <a href="https://github.com/Senorsen/netease-cloud-music-rpm">netease-cloud-music-rpm</a> 。如果你想直接使用官方发布的安装包，那只需要很少的几步操作就能达到要求。</p>
 
 <!--more-->
 
 
 <ul>
-<li><a href="http://blog.deepin.org/2016/05/netease-cloud-music-for-linux-is-released/">音乐无界限，听见好时光——网易云音乐 Linux 版震撼来袭！</a></li>
-<li>网易官方提供 Deepin 和 Ubuntu 的安装包，其它非 Debian 用户也可以使用官方提供的 .deb 安装包</li>
 <li>本文采用的安装包是网易云音乐官网下载的 Ubuntu 16.04 （64 位）</li>
 <li>运行环境 openSUSE Leap 42.1 (x86_64) 64 位</li>
 <li>其它 linux 发行版的用户也可以使用本文的方法，对于提示的错误如果不影响使用可以不用管，否则就需要安装相应的依赖包</li>
@@ -156,7 +131,7 @@ gem sources -l  # 查看当前源，确保只有 ruby.taobao.org
 
 <p>解压后执行以下命令将 netease-cloud-music* 文件夹移动到 /opt 文件夹（也可以是其它）</p>
 
-<pre><code>sudo cp -r netease-cloud-music_0.9.0-2_amd64 /opt
+<pre><code class="sh">sudo cp -r netease-cloud-music_0.9.0-2_amd64 /opt
 cd /opt/netease-cloud-music_0.9.0-2_amd64
 sudo tar -xvf data.tar.xz
 </code></pre>
@@ -165,14 +140,14 @@ sudo tar -xvf data.tar.xz
 
 <p>接下来进就可以运行网易云音乐，这种方法不会引起内存泄漏，所以可以用这种方法避免内存泄漏</p>
 
-<pre><code>./usr/bin/netease-cloud-music
+<pre><code class="sh">./usr/bin/netease-cloud-music
 </code></pre>
 
 <p><img src="/images/3.gif" alt="运行网易云音乐" /></p>
 
 <p>如果你觉得不够方便，你可以将以下命令粘贴到 .bashrc ，但是用这种方法会引起内存泄漏，具体原因不清楚</p>
 
-<pre><code>alias netease-cloud-music='cd / &amp;&amp; \
+<pre><code class="sh">alias netease-cloud-music='cd / &amp;&amp; \
     ./opt/netease-cloud-music_0.9.0-2_amd64/usr/bin/netease-cloud-music'
 </code></pre>
 
