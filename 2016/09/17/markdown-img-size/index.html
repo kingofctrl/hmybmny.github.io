@@ -260,43 +260,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 
-  <section>
-    <h1>Comments</h1>
-    Want to leave a comment? Visit <a href="https://github.com/hmybmny/hmybmny.github.io/issues/2" target="_blank"> this post's issue page on GitHub</a> (you'll need a GitHub account.)
-    <br />
-
-    <div id="comments">
-    </div>
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function(event) {
-    function loadComments(data) {
-        for (var i=0; i<data.length; i++) {
-            var cuser = data[i].user.login;
-            var cuserlink = "https://github.com/" + data[i].user.login;
-            var clink = "https://github.com/hmybmny/hmybmny.github.io/issues/2#issuecomment-" + data[i].url.substring(data[i].url.lastIndexOf("/")+1);
-            var cbody = data[i].body;
-            var cavatarlink = data[i].user.avatar_url;
-            var options = { year: 'numeric', month: 'short', day: 'numeric' };
-            var cdate = new Date(data[i].created_at).toLocaleString("en", options);
-            $("#comments").append("<div id='comment'><a href=\""+ cuserlink +'\"><img src="' + cavatarlink + '" width="26" height="26">' + "</a> &nbsp; <a href=\""+ cuserlink + "\">" + cuser + "</a> &nbsp; commented on &nbsp; <a href=\"" + clink + "\">" + cdate + "</a>" + "<p>" + cbody + " </p></div>");
-        }
-    }
-    $.ajax("https://api.github.com/repos/hmybmny/hmybmny.github.io/issues/2/comments", {
-        headers: {Accept: "application/vnd.github.full+json"},
-        cache: false,
-        async: false,
-        dataType: "json",
-        success: function(msg){
-        loadComments(msg);
-        }
-    });
-});
-</script>
-  </section>
-
-
-
-
 
 
 
