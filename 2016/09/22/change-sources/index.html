@@ -9,11 +9,12 @@
   <meta name="author" content="hmybmny">
 
   
-  <meta name="description" content="请记住所有配置当前用户和 root 用户的都需要修改，否则使用 sudo 或者 root 用户模式下使用的依旧是官方源。 pip: 1
+  <meta name="description" content="所有配置当前用户和 root 用户最好都修改，否则 root 用户模式下使用的依旧是官方源。 pip: 1
 2
 3
 mkdir ~/.pip &amp;&amp; cd .pip/
-echo &quot;[global]&quot;&gt;&gt;pip.conf &hellip;">
+echo &quot;[global]&quot;&gt;&gt;pip.conf
+echo &quot;index &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,7 +87,7 @@ echo &quot;[global]&quot;&gt;&gt;pip.conf &hellip;">
   </header>
 
 
-<div class="entry-content"><p>请记住所有配置当前用户和 root 用户的都需要修改，否则使用 sudo 或者 root 用户模式下使用的依旧是官方源。</p>
+<div class="entry-content"><p>所有配置当前用户和 root 用户最好都修改，否则 root 用户模式下使用的依旧是官方源。</p>
 
 <!--more-->
 
@@ -110,7 +111,7 @@ echo &quot;[global]&quot;&gt;&gt;pip.conf &hellip;">
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 清华源</span>
 </span><span class='line'>gem sources --remove https://rubygems.org/  <span class="c">#移除默认源</span>
-</span><span class='line'>gem sources -a https://mirrors.tuna.tsinghua.edu.cn/rubygems/  <span class="c">#添加中清华源</span>
+</span><span class='line'>gem sources -a https://mirrors.tuna.tsinghua.edu.cn/rubygems/  <span class="c">#添加清华源</span>
 </span><span class='line'>gem sources -l  <span class="c"># 查看当前源，确保只有 https://mirrors.tuna.tsinghua.edu.cn/rubygems/</span>
 </span></code></pre></td></tr></table></div></figure>
 

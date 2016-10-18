@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | hmybmny]]></title>
   <link href="https://hmybmny.com/categories/linux/atom.xml" rel="self"/>
   <link href="https://hmybmny.com/"/>
-  <updated>2016-10-15T11:23:53+08:00</updated>
+  <updated>2016-10-18T19:20:48+08:00</updated>
   <id>https://hmybmny.com/</id>
   <author>
     <name><![CDATA[hmybmny]]></name>
@@ -18,7 +18,7 @@
     <link href="https://hmybmny.com/2016/09/22/change-sources/"/>
     <updated>2016-09-22T00:00:00+08:00</updated>
     <id>https://hmybmny.com/2016/09/22/change-sources</id>
-    <content type="html"><![CDATA[<p>请记住所有配置当前用户和 root 用户的都需要修改，否则使用 sudo 或者 root 用户模式下使用的依旧是官方源。</p>
+    <content type="html"><![CDATA[<p>所有配置当前用户和 root 用户最好都修改，否则 root 用户模式下使用的依旧是官方源。</p>
 
 <!--more-->
 
@@ -34,7 +34,7 @@ echo "index-url = https://pypi.tuna.tsinghua.edu.cn/simple"&gt;&gt;pip.conf
 
 <pre><code class="sh"># 清华源
 gem sources --remove https://rubygems.org/  #移除默认源
-gem sources -a https://mirrors.tuna.tsinghua.edu.cn/rubygems/  #添加中清华源
+gem sources -a https://mirrors.tuna.tsinghua.edu.cn/rubygems/  #添加清华源
 gem sources -l  # 查看当前源，确保只有 https://mirrors.tuna.tsinghua.edu.cn/rubygems/
 </code></pre>
 

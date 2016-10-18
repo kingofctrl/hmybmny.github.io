@@ -4,7 +4,7 @@
   <title><![CDATA[hmybmny]]></title>
   <link href="https://hmybmny.com/atom.xml" rel="self"/>
   <link href="https://hmybmny.com/"/>
-  <updated>2016-10-15T11:23:53+08:00</updated>
+  <updated>2016-10-18T19:20:48+08:00</updated>
   <id>https://hmybmny.com/</id>
   <author>
     <name><![CDATA[hmybmny]]></name>
@@ -362,7 +362,7 @@
     <link href="https://hmybmny.com/2016/09/22/change-sources/"/>
     <updated>2016-09-22T00:00:00+08:00</updated>
     <id>https://hmybmny.com/2016/09/22/change-sources</id>
-    <content type="html"><![CDATA[<p>请记住所有配置当前用户和 root 用户的都需要修改，否则使用 sudo 或者 root 用户模式下使用的依旧是官方源。</p>
+    <content type="html"><![CDATA[<p>所有配置当前用户和 root 用户最好都修改，否则 root 用户模式下使用的依旧是官方源。</p>
 
 <!--more-->
 
@@ -386,7 +386,7 @@
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 清华源</span>
 </span><span class='line'>gem sources --remove https://rubygems.org/  <span class="c">#移除默认源</span>
-</span><span class='line'>gem sources -a https://mirrors.tuna.tsinghua.edu.cn/rubygems/  <span class="c">#添加中清华源</span>
+</span><span class='line'>gem sources -a https://mirrors.tuna.tsinghua.edu.cn/rubygems/  <span class="c">#添加清华源</span>
 </span><span class='line'>gem sources -l  <span class="c"># 查看当前源，确保只有 https://mirrors.tuna.tsinghua.edu.cn/rubygems/</span>
 </span></code></pre></td></tr></table></div></figure>
 
