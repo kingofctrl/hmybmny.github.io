@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | hmybmny]]></title>
   <link href="https://hmybmny.com/categories/linux/atom.xml" rel="self"/>
   <link href="https://hmybmny.com/"/>
-  <updated>2016-10-18T19:20:48+08:00</updated>
+  <updated>2016-10-22T12:25:55+08:00</updated>
   <id>https://hmybmny.com/</id>
   <author>
     <name><![CDATA[hmybmny]]></name>
@@ -71,7 +71,7 @@ gem sources -l  # 查看当前源，确保只有 https://mirrors.tuna.tsinghua.e
     <link href="https://hmybmny.com/2016/09/17/markdown-img-size/"/>
     <updated>2016-09-17T00:00:00+08:00</updated>
     <id>https://hmybmny.com/2016/09/17/markdown-img-size</id>
-    <content type="html"><![CDATA[<p>发第一篇文章时最后两张图太大，已经超过了屏幕正常的宽度，当时搜了一些资料，给出的方法基本都是 <code>&lt;img ...&gt;&lt;/img&gt;</code> 的形式，也有给出 markdown 语法的，测试后都不能用。后来准备使用图床，把图片存到 GitHub 仓库得到图片地址后使用 <code>&lt;img&gt;</code> 标签控制。之前也想尝试使用七牛来做图床，但是没有绑定域名的话只能使用测试域名，测试域名有一些限制，绑定域名又需要备案，只好放弃。正好这两天中秋放假，换了个姿势重新找了资料，终于找到了 markdown 控制图片大小的方法，格式如下：</p>
+    <content type="html"><![CDATA[<p>发第一篇文章时最后两张图太大，已经超过了屏幕正常的宽度，当时搜了一些资料，给出的方法基本都是 <code>&lt;img ...&gt;&lt;/img&gt;</code> 的形式，也有给出 markdown 语法的，测试后都不能用。后来准备使用图床，把图片存到 GitHub 仓库得到图片地址后使用 <code>&lt;img&gt;</code> 标签控制。之前也想尝试使用七牛，但是没有绑定域名的话只能使用测试域名，最后只好放弃。正好这两天中秋放假，换了个姿势重新找了资料，终于找到了 markdown 控制图片大小的方法，格式如下：</p>
 
 <!--more-->
 
