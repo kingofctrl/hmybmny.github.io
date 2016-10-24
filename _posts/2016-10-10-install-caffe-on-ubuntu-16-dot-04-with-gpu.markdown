@@ -30,6 +30,7 @@ sudo apt install -y python-pip python-dev python-numpy python-scipy
 ```
 
 - 修改配置文件
+
 ```
 cd ~/
 git clone https://github.com/BVLC/caffe.git
@@ -39,20 +40,23 @@ vim Makefile.config
 ```
 
 取消注释
+
 > CPU_ONLY := 1 
 
 > WITH_PYTHON_LAYER := 1 
 
 如果使用 OpenBlas 代替默认的 ATLAS的话，则修改
+
 > BLAS := open
 
-并运行以下命令
+并运行以下命令（使用 OpenBlas 的情况下） 
 
 ```
 echo 'export OPENBLAS_NUM_THREADS=4' >> /.bashrc
 ```
 
 修改
+
 > INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial 
 
 > LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/hdf5/serial 
@@ -89,14 +93,9 @@ python
 **Install with GPU (NVIDIA)**
 
 - 进入 BIOS，将 Secure Boot 改为 Disabled
-
-- 下载 cuda8 和 Patch1 https://developer.nvidia.com/cuda-release-candidate-download
-##### 下载完后双击 cuda-misc-headers-8-0_8.0.27.1-1_amd64.deb 安装 Patch1
-
-- 下载 cuDNN v5.1 Library for Linux https://developer.nvidia.com/rdp/cudnn-download
-##### 对于想使用 cuDNN 加速的同学，首先得确保你的 GPU 计算能力 (capability) 大于 3.0，至于 GPU 计算能力怎么看我后面会提到。
-
-- 安装依赖库，和 Install with CPU 第一步一样。
+- 下载 cuda8 和 Patch1 [https://developer.nvidia.com/cuda-release-candidate-download ](https://developer.nvidia.com/cuda-release-candidate-download) ,下载完后双击 cuda-misc-headers-8-0_8.0.27.1-1_amd64.deb 安装 Patch1
+- 下载 cuDNN v5.1 Library for Linux [https://developer.nvidia.com/rdp/cudnn-download ](https://developer.nvidia.com/rdp/cudnn-download) ,对于想使用 cuDNN 加速的同学，首先得确保你的 GPU 计算能力 (capability) 大于 3.0，至于 GPU 计算能力怎么看我后面会提到
+- 安装依赖库，和 Install with CPU 第一步一样
 
 ```
 sudo apt update
@@ -128,6 +127,7 @@ sudo make all -j $(($(nproc) + 1))
 ./1_Utilities/deviceQuery/deviceQuery
 ```
 ##### 下图是我查看 GPU 计算能力后的输出结果
+
 ![GPU 计算能力](/images/gpu_capability.png)
 
 - 如果 GPU 计算能力 (capability) 大于 3.0，那么就可以使用 cuDNN 加速，否则跳过这一步，安装 cuDNN
@@ -140,9 +140,7 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include/
 echo 'export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
 ```
 
-- 安装 make pycaffe 所需依赖
-
-这一步之前最好先修改 pip 源，由于下载的文件比较大，默认源速度很慢，修改源可以参考 [Linux 修改镜像源加快下载速度(pip-RubyGems-NPM-Docker)](https://hmybmny.com/2016/10/05/change-sources/)
+- 安装 make pycaffe 所需依赖, 这一步之前最好先修改 pip 源，由于下载的文件比较大，默认源速度很慢，修改源可以参考 [Linux 修改镜像源加快下载速度(pip-RubyGems-NPM-Docker)](https://hmybmny.com/2016/10/change-sources/)
 
 ```
 cd python
@@ -152,11 +150,13 @@ sudo -H pip2 install -r requirements.txt
 - 修改 Makefile.config
 
 去掉注释
+
 > USE_CUDNN := 1 
 
 > WITH_PYTHON_LAYER := 1
 
 修改
+
 > CUDA_DIR := /usr/local/cuda-8.0
 
 > INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial 
