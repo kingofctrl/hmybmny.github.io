@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: https://hmybmny.com/sitemap.xml 

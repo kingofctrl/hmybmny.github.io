@@ -1,0 +1,5 @@
+markdown: kramdown
+permalink: /:year/:month/:title/
+url: https://hmybmny.com
+author: 刘勃
+highlighter: rouge
