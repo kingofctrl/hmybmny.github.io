@@ -1,5 +1,5 @@
 markdown: kramdown
 permalink: /:year/:month/:title/
-url: https://hmybmny.com
+url: http://hmybmny.com
 author: hmybmny
 highlighter: rouge

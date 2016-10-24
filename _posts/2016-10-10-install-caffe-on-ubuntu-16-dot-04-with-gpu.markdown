@@ -59,7 +59,7 @@ echo 'export OPENBLAS_NUM_THREADS=4' >> /.bashrc
 
 - 安装 make pycaffe 所需的库
 
-这一步之前最好先修改 pip 源，由于下载的文件比较大，默认源速度很慢，修改源可以参考 [Linux 修改镜像源加快下载速度(pip-RubyGems-NPM-Docker)](https://hmybmny.com/2016/09/change-sources/)
+这一步之前最好先修改 pip 源，由于下载的文件比较大，默认源速度很慢，修改源可以参考 [Linux 修改镜像源加快下载速度(pip-RubyGems-NPM-Docker)](http://hmybmny.com/2016/09/change-sources/)
 
 ```
 cd python
