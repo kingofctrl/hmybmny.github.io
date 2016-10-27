@@ -94,7 +94,7 @@ python
 
 - 进入 BIOS，将 Secure Boot 改为 Disabled
 - 下载 cuda8 和 Patch1 [https://developer.nvidia.com/cuda-release-candidate-download ](https://developer.nvidia.com/cuda-release-candidate-download) ,下载完后双击 cuda-misc-headers-8-0_8.0.27.1-1_amd64.deb 安装 Patch1
-- 下载 cuDNN v5.1 Library for Linux [https://developer.nvidia.com/rdp/cudnn-download ](https://developer.nvidia.com/rdp/cudnn-download) ,对于想使用 cuDNN 加速的同学，首先得确保你的 GPU 计算能力 (capability) 大于 3.0，至于 GPU 计算能力怎么看我后面会提到
+- 下载 cuDNN v5.1 Library for Linux [https://developer.nvidia.com/rdp/cudnn-download ](https://developer.nvidia.com/rdp/cudnn-download) ,对于想使用 cuDNN 加速的同学，首先得确保你的 GPU 计算能力 (capability) 大于 3.0
 - 安装依赖库，和 Install with CPU 第一步一样
 
 ```
@@ -126,7 +126,8 @@ sudo make all -j $(($(nproc) + 1))
 # 查看 GPU 计算能力 (capability)
 ./1_Utilities/deviceQuery/deviceQuery
 ```
-##### 下图是我查看 GPU 计算能力后的输出结果
+
+##### 下图是我查看 GPU 计算性能后的输出结果
 
 ![GPU 计算能力](/images/gpu_capability.png)
 
