@@ -132,7 +132,6 @@ sudo make all -j $(($(nproc) + 1))
 ![GPU 计算能力](/images/gpu_capability.png)
 
 - 如果 GPU 计算能力 (capability) 大于 3.0，那么就可以使用 cuDNN 加速，否则跳过安装 cuDNN这一步
-
 - 安装 cuDNN
 
 ```
