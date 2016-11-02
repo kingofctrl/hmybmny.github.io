@@ -17,7 +17,7 @@ tags:
 **pip:**
 
 ```
-mkdir ~/.pip && cd .pip/
+mkdir ~/.pip && cd ~/.pip/
 echo "[global]">>pip.conf
 echo "index-url = https://pypi.tuna.tsinghua.edu.cn/simple">>pip.conf
 ```
