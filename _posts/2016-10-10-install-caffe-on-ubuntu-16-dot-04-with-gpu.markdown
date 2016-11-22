@@ -52,7 +52,7 @@ vim Makefile.config
 并运行以下命令（使用 OpenBlas 的情况下） 
 
 ```
-echo 'export OPENBLAS_NUM_THREADS=4' >> /.bashrc
+echo 'export OPENBLAS_NUM_THREADS=4' >> ~/.bashrc
 ```
 
 修改
@@ -80,7 +80,7 @@ make runtest
 make pycaffe
 make distribute
 # user 是你的用户名
-echo 'export PYTHONPATH=/home/user/caffe/python:$PYTHONPATH' >> /.bashrc 
+echo 'export PYTHONPATH=/home/user/caffe/python:$PYTHONPATH' >> ~/.bashrc 
 
 # 重启终端
 python
@@ -175,7 +175,7 @@ make runtest
 make pycaffe
 make distribute
 # user 是你的用户名
-echo 'export PYTHONPATH=/home/user/caffe/python:$PYTHONPATH' >> /.bashrc 
+echo 'export PYTHONPATH=/home/user/caffe/python:$PYTHONPATH' >> ~/.bashrc 
 
 # 重启终端
 python
