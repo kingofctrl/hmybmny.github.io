@@ -11,4 +11,4 @@ layout: page
 
 关于本站
 
-  主题源码： [yihui/great-waterfall · GitHub](https://github.com/yihui/great-waterfall)
+  主题源码： [hmybmny/caffeine-jekyll-theme · GitHub](https://github.com/hmybmny/caffeine-jekyll-theme)
