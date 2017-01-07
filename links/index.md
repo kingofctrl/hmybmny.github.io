@@ -1,6 +1,5 @@
 ---
-title: links
+title: Links
 layout: page
 ---
-
 
