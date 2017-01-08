@@ -1,4 +1,3 @@
-<hr />
 <section class="github_issues_comments">
 <h2>Comments</h2>
 <div>
